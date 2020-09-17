@@ -18,7 +18,30 @@
       const now = new Date();
       const text = document.getElementById("text");
 
+      function rollDice(min = 1, max = 6) {
+        return min + Math.floor(Math.random() * (max - min + 1));
+      }
+
       function getText() {
+        const dice = rollDice();
+        if (dice === 6) {
+          const aareTeam = [
+            "Carla",
+            "Christine",
+            "Venus",
+            "Lorenzo",
+            "Noah",
+            "Josif",
+            "Marcel",
+            "Boris",
+            "Dave",
+            "Gjorgi",
+          ];
+          const randomMember =
+            aareTeam[Math.floor(Math.random() * aareTeam.length)];
+
+          return `No idea, you should ask ${randomMember}`;
+        }
         const day = now.getDay();
         const hour = now.getHours();
         const minute = now.getMinutes();
