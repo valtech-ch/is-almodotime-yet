@@ -20,19 +20,43 @@
 
       function getText() {
         const day = now.getDay();
+        const hour = now.getHours();
+        const minute = now.getMinutes();
+
+        if (day <= 5 && hour === 9 && minutes >= 55) {
+          if (day === 1) {
+            return "Nope, Daily-Time! (and Lorenzo won't be in the daily)";
+          }
+
+          return "Daily-Time! Open Zoom up!";
+        }
+
+        if (day === 2) {
+          return "Nope. But is it planning day???";
+        }
 
         if (day === 4) {
           return "Nope. But tomorrow is Friday!";
         }
 
         if (day === 5) {
-          const hour = now.getHours();
-          const minute = now.getMinutes();
+          if (hour < 8) {
+            return "Hang in there mate, it's going to be beer-time soon!";
+          }
+
+          if (hour < 9) {
+            return "Not yet! But maybe a coffee?";
+          }
+
+          if (hour < 12) {
+            return "Nope. Now it's more lunch-time";
+          }
+
           if (hour < 16) {
             return "Not yet! But soon!";
           }
 
-          return "Yeees!";
+          return "Yeees! What are you still doing here, get to Almodo!";
         }
 
         return "Nope. Next Friday!";
