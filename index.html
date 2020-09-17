@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Is almodo time yet?</title>
+    <style>
+      .text {
+        text-align: center;
+        font-size: 4rem;
+        padding-top: 40vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="text" class="text"></div>
+    <script>
+      const now = new Date();
+      const text = document.getElementById("text");
+
+      function getText() {
+        const day = now.getDay();
+
+        if (day === 4) {
+          return "Nope. But tomorrow is Friday!";
+        }
+
+        if (day === 5) {
+          const hour = now.getHours();
+          const minute = now.getMinutes();
+          if (hour < 16) {
+            return "Not yet! But soon!";
+          }
+
+          return "Yeees!";
+        }
+
+        return "Nope. Next Friday!";
+      }
+
+      text.innerHTML = getText();
+    </script>
+  </body>
+</html>
