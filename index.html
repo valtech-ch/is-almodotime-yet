@@ -90,11 +90,15 @@
             return "Nope. Now it's more lunch-time";
           }
 
-          if (hour < 16) {
-            return "Not yet! But soon!";
+          if (hour < 15) {
+            return "Not yet! But it's something with gloves!";
           }
 
-          return "Yeees! What are you still doing here, get to Almodo!";
+          if (hour < 17) {
+            return "Not yet! Are you wearing gloves ATM???";
+          }
+
+          return "Yeees! Actually not! Today is Alcohol & Magic!";
         }
 
         return "Nope. Next Friday!";
