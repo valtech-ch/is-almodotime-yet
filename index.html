@@ -39,33 +39,11 @@
 
       function getText() {
         const dice = rollDice();
-        if (dice === 6) {
-          const aareTeam = [
-            "Carla",
-            "Christine",
-            "Venus",
-            "Lorenzo",
-            "Noah",
-            "Josif",
-            "Marcel",
-            "Boris",
-            "Dave",
-            "Gjorgi",
-          ];
-          const randomMember =
-            aareTeam[Math.floor(Math.random() * aareTeam.length)];
-
-          return `No idea, you should ask ${randomMember}`;
-        }
         const day = now.getDay();
         const hour = now.getHours();
         const minute = now.getMinutes();
 
         if (day <= 5 && hour === 9 && minutes >= 55) {
-          if (day === 1) {
-            return "Nope, Daily-Time! (and Lorenzo won't be in the daily)";
-          }
-
           return "Daily-Time! Open Zoom up!";
         }
 
@@ -95,7 +73,7 @@
           }
 
           if (hour < 16) {
-            return "Not yet! But soon!";
+            return "Hang in there mate, it's going to be beer-time soon!";
           }
 
           return "Yeees! Almodotime!";
