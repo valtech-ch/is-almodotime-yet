@@ -47,15 +47,8 @@
           return "Daily-Time! Open Zoom up!";
         }
 
+        // Tuesday
         if (day === 2) {
-          return "Nope. But is it planning day???";
-        }
-
-        if (day === 4) {
-          return "Nope. But tomorrow is Friday!";
-        }
-
-        if (day === 5) {
           if (hour < 8) {
             return "Hang in there mate, it's going to be beer-time soon!";
           }
@@ -79,7 +72,42 @@
           return "Yeees! Almodotime!";
         }
 
-        return "Nope. Next Friday!";
+        // Wednesday
+        if (day === 3) {
+          return "Noooooope!";
+        }
+
+        // Thursday
+        if (day === 4) {
+          if (hour < 8) {
+            return "Hang in there mate, it's going to be beer-time soon!";
+          }
+
+          if (hour < 11) {
+            return "Not yet! But maybe a coffee?";
+          }
+
+          if (hour < 12) {
+            return "Nope. Now it's more lunch-time";
+          }
+          
+          if (hour < 13) {
+            return "Not yet! Lunch time!";
+          }
+
+          if (hour < 16) {
+            return "Hang in there mate, it's going to be beer-time soon!";
+          }
+
+          return "Yeees! Almodotime!";
+        }
+
+        // Friday
+        if (day === 5) {
+          return "Nope. We changed the day!";
+        }
+
+        return "Nope. Next Tuesday!";
       }
 
       text.innerHTML = getText();
