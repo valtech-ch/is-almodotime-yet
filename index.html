@@ -20,10 +20,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Is almodo time yet?</title>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        background: linear-gradient(180deg, #001100 0%, #000800 50%, #000000 100%);
+        min-height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      /* CRT scan lines effect */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 255, 0, 0.03) 2px,
+          rgba(0, 255, 0, 0.03) 4px
+        );
+        pointer-events: none;
+        z-index: 1000;
+      }
+      
       .text {
         text-align: center;
+        font-family: 'VT323', 'Courier New', monospace;
         font-size: 4rem;
-        padding-top: 40vh;
+        padding-top: 35vh;
+        color: #00ff00;
+        text-shadow: 
+          0 0 5px #00ff00,
+          0 0 10px #00ff00,
+          0 0 15px #00ff00,
+          0 0 20px #00ff00;
+        animation: textFlicker 2s infinite alternate;
+        line-height: 1.2;
+        padding: 20px;
+        position: relative;
+        z-index: 10;
+      }
+      
+      /* Terminal border effect */
+      .text::before {
+        content: '';
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        border: 2px solid #00ff00;
+        border-radius: 10px;
+        box-shadow: 
+          inset 0 0 20px rgba(0, 255, 0, 0.1),
+          0 0 20px rgba(0, 255, 0, 0.2);
+        pointer-events: none;
+        z-index: 5;
+      }
+      
+      @keyframes textFlicker {
+        0% { 
+          text-shadow: 
+            0 0 5px #00ff00,
+            0 0 10px #00ff00,
+            0 0 15px #00ff00,
+            0 0 20px #00ff00;
+        }
+        100% { 
+          text-shadow: 
+            0 0 2px #00ff00,
+            0 0 5px #00ff00,
+            0 0 8px #00ff00,
+            0 0 12px #00ff00;
+        }
+      }
+      
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .text {
+          font-size: 2.5rem;
+          padding-top: 30vh;
+        }
+        
+        .text::before {
+          top: 10px;
+          left: 10px;
+          right: 10px;
+          bottom: 10px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .text {
+          font-size: 1.8rem;
+          padding-top: 25vh;
+        }
       }
     </style>
   </head>
