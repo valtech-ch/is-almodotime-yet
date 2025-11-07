@@ -104,7 +104,11 @@
 
         // Friday
         if (day === 5) {
-          return "Nope. We changed the day!";
+          
+          if (hour < 16) {
+            return "Hang in there mate, it's going to be beer-time soon! But today is Oktoberfest!";
+          }
+          return "Yes! Go to Almodo now!";
         }
 
         return "Nope. Next Tuesday!";
