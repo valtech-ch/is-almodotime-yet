@@ -43,75 +43,36 @@
         const hour = now.getHours();
         const minutes = now.getMinutes();
 
-        if (day <= 5 && hour === 9 && minutes >= 55) {
-          return "Daily-Time! Open Zoom up!";
+        if (day !== 2) {
+          return "Nope :(";
         }
 
-        // Tuesday
+        // Almododay
         if (day === 2) {
-          if (hour < 8) {
-            return "Hang in there mate, it's going to be beer-time soon!";
-          }
 
+          if (hour < 8) {
+            return "Too early for a beer, isn't it?";
+          }
+  
           if (hour < 11) {
             return "Not yet! But maybe a coffee?";
           }
-
+  
           if (hour < 12) {
             return "Nope. Now it's more lunch-time";
           }
-          
+            
           if (hour < 13) {
             return "Not yet! Lunch time!";
           }
-
-          if (hour < 16) {
+          
+          if (hour < 17) {
             return "Hang in there mate, it's going to be beer-time soon!";
           }
 
           return "Yeees! Almodotime!";
         }
 
-        // Wednesday
-        if (day === 3) {
-          return "Noooooope!";
-        }
-
-        // Thursday
-        if (day === 4) {
-          if (hour < 8) {
-            return "Hang in there mate, it's going to be beer-time soon!";
-          }
-
-          if (hour < 11) {
-            return "Not yet! But maybe a coffee?";
-          }
-
-          if (hour < 12) {
-            return "Nope. Now it's more lunch-time";
-          }
-          
-          if (hour < 13) {
-            return "Not yet! Lunch time!";
-          }
-
-          if (hour < 16) {
-            return "Hang in there mate, it's going to be beer-time soon!";
-          }
-
-          return "Yeees! Almodotime!";
-        }
-
-        // Friday
-        if (day === 5) {
-          
-          if (hour < 16) {
-            return "Hang in there mate, it's going to be beer-time soon! But today is Oktoberfest!";
-          }
-          return "Yes! Go to Almodo now!";
-        }
-
-        return "Nope. Next Tuesday!";
       }
 
       text.innerHTML = getText();
