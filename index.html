@@ -66,11 +66,11 @@
             return "Not yet! Lunch time!";
           }
           
-          if (hour < 17) {
+          if (hour < 16 || (hour === 16 && minutes < 30)) {
             return "Hang in there mate, it's going to be beer-time soon!";
           }
 
-          return "Yeees! Almodotime!";
+          return "Yeees! Almodotime! We need to find a name!";
         }
 
       }
